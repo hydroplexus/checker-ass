@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/shape">
+        <file alias="imgB">res/shapes/black.png</file>
+        <file alias="imgBS">res/shapes/blackSuper.png</file>
+        <file alias="imgW">res/shapes/white.png</file>
+        <file alias="imgWS">res/shapes/whiteSuper.png</file>
+    </qresource>
+</RCC>
