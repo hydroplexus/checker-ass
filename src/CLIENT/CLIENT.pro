@@ -57,6 +57,6 @@ else:unix:!macx: PRE_TARGETDEPS += $${LIBS_PATH}/lib_COMMON.a
 FORMS +=
 
 DISTFILES += \
-    ../../_.doc/_.chk-ass-UI.qmodel
+    _.UI.qmodel
 
 

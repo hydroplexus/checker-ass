@@ -58,5 +58,5 @@ else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $${LIBS_PA
 else:unix:!macx: PRE_TARGETDEPS += $${LIBS_PATH}/lib_COMMON.a
 
 DISTFILES += \
-    ../../_.doc/_.chk-ass-board.qmodel
+    _.BOARD.qmodel
 
