@@ -18,7 +18,7 @@ Participant::Participant(QWidget * parent) : QWidget(parent)
 	_name.setAlignment(Qt::AlignmentFlag::AlignCenter);
 	_name.setFixedHeight(44);
 	_name.setFixedWidth(250);
-	_name.setFont(QFont("Tahoma", 14, QFont::Bold));
+	_name.setFont(QFont("Arial", 14, QFont::Bold));
 
 	_add->setFixedHeight(_selector->height()-10);
 	_add->setFixedWidth(_add->height());
