@@ -338,6 +338,17 @@ QString UI::winner()
 	return _board->move().currentPlayer ? _playerB->name() : _playerW->name();
 }
 
+void UI::closeEvent(QCloseEvent * event)
+{
+	qDebug()<<_mode;
+	if ((_mode != gamePlay)
+		|| (_mode != gamePause)) {
+		event->accept();
+		return;
+	}
+	event->ignore();
+}
+
 void UI::CatchMove(Xeno::Move move)
 {
 	_moves.append(move);

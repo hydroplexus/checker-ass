@@ -53,6 +53,9 @@ private:
 				QString			looser();
 				QString			winner();
 
+protected:
+				void			closeEvent(QCloseEvent * event);
+
 signals:
 				void			ModeChanged(Mode mode);
 
