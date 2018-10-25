@@ -194,8 +194,12 @@ UI::UI(QWidget * parent) : QWidget(parent)
 	}
 
 	QString dbName = "xeno.sqlite3";
-
 	if (!QFileInfo(dbName).exists()) {
+		QMessageBox::warning(this,
+							 "ОШИБКА!",
+							 "Файл xeno.sqlite3 не найден в каталоге приложения.\n"
+							 "Будет создан новый.",
+							 QMessageBox::Yes);
 		QFile::copy(":/templates/xeno", dbName);
 		QFile::setPermissions(dbName, QFileDevice::WriteOther);
 	}
