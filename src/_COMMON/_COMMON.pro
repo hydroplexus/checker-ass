@@ -36,3 +36,6 @@ unix {
 
 include(../../_.common.pri)
 include(../../_.lib.pri)
+
+RESOURCES += \
+    _common.qrc

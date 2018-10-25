@@ -56,7 +56,8 @@ else:unix:!macx: PRE_TARGETDEPS += $${LIBS_PATH}/lib_COMMON.a
 
 FORMS +=
 
-DISTFILES += \
-    _.UI.qmodel
+DISTFILES +=
+
+RESOURCES +=
 
 
