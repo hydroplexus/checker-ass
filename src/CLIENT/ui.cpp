@@ -196,7 +196,7 @@ UI::UI(QWidget * parent) : QWidget(parent)
 	QString dbName = "xeno.sqlite3";
 
 	if (!QFileInfo(dbName).exists()) {
-		qDebug()<<QFile::copy(":/templates/xeno", dbName);
+		QFile::copy(":/templates/xeno", dbName);
 		QFile::setPermissions(dbName, QFileDevice::WriteOther);
 	}
 	_xeno.OpenDB(dbName);
