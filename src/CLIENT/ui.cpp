@@ -189,7 +189,7 @@ UI::UI(QWidget * parent) : QWidget(parent)
 						Qt::DirectConnection);
 	}
 
-	_xeno.OpenDB("../../src/_COMMON/_.res/xeno.sqlite3");
+	_xeno.OpenDB("xeno.sqlite3");
 
 	_players = new Xeno::Players;
 	_parties = new Xeno::Parties;
