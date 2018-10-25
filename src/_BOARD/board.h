@@ -37,7 +37,6 @@ private:
 					class	Label;
 					class	Cell;
 
-
 	static  const   QString                 _letters;
 					Solver *				_solver;
 					Solver::Sieve::Moves *	_moves;
