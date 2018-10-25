@@ -201,7 +201,9 @@ UI::UI(QWidget * parent) : QWidget(parent)
 							 "Будет создан новый.",
 							 QMessageBox::Yes);
 		QFile::copy(":/templates/xeno", dbName);
-		QFile::setPermissions(dbName, QFileDevice::WriteOther);
+		QFile::setPermissions(dbName, QFileDevice::WriteOther
+										| QFileDevice::WriteUser
+										| QFileDevice::WriteOwner);
 	}
 	_xeno.OpenDB(dbName);
 
