@@ -11,7 +11,6 @@
 #include <QProxyStyle>
 #include <QMessageBox>
 #include <QFileInfo>
-#include <QFile>
 
 #include "ui.h"
 #include "participant.h"
@@ -35,8 +34,6 @@ public:
 
 UI::UI(QWidget * parent) : QWidget(parent)
 {
-//	Q_INIT_RESOURCE(_board);
-//	Q_INIT_RESOURCE(_common);
 //	TODO	перенести сюда все необязательные элементы интерфейса из заголовка
 //  создаём элементы интерфейса
 	{
@@ -523,8 +520,6 @@ void UI::ChangeMode(Mode mode)
 
 UI::~UI()
 {
-//	Q_CLEANUP_RESOURCE(_board);
-//	Q_CLEANUP_RESOURCE(_common);
 	delete _players;
 	delete _parties;
 }
