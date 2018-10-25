@@ -1,5 +1,5 @@
 <RCC>
     <qresource prefix="/templates">
-        <file alias="xeno">xeno-template.sqlite3</file>
+        <file alias="xeno">_.res/xeno-template.sqlite3</file>
     </qresource>
 </RCC>
