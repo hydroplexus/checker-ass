@@ -340,13 +340,19 @@ QString UI::winner()
 
 void UI::closeEvent(QCloseEvent * event)
 {
-	qDebug()<<_mode;
-	if ((_mode != gamePlay)
-		|| (_mode != gamePause)) {
-		event->accept();
+	if ((_mode == gamePlay || _mode == gamePause) &&
+			(QMessageBox::No ==
+				QMessageBox::warning(this,
+				"Закрытие приложения",
+				"Вы ещё не одержали победу.\n"
+				"Уверены, что хотите прервать партию?\n"
+				"\n"
+				"Хотя... её можно будет продолжить в другой раз.",
+				QMessageBox::No | QMessageBox::Yes))) {
+		event->ignore();
 		return;
 	}
-	event->ignore();
+	event->accept();
 }
 
 void UI::CatchMove(Xeno::Move move)
