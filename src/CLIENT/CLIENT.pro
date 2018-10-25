@@ -58,6 +58,7 @@ FORMS +=
 
 DISTFILES +=
 
-RESOURCES +=
+RESOURCES += \
+    _ui.qrc
 
 

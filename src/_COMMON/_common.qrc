@@ -1,5 +1,3 @@
 <RCC>
-    <qresource prefix="/common">
-        <file>_.res/xeno-template.sqlite3</file>
-    </qresource>
+    <qresource prefix="/templates"/>
 </RCC>

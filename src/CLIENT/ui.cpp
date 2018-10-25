@@ -1,3 +1,4 @@
+#include <QCoreApplication>
 #include <QDebug>
 #include <QLabel>
 #include <QHBoxLayout>
@@ -9,6 +10,8 @@
 #include <QHeaderView>
 #include <QProxyStyle>
 #include <QMessageBox>
+#include <QFileInfo>
+#include <QFile>
 
 #include "ui.h"
 #include "participant.h"
@@ -33,6 +36,7 @@ public:
 UI::UI(QWidget * parent) : QWidget(parent)
 {
 //	Q_INIT_RESOURCE(_board);
+//	Q_INIT_RESOURCE(_common);
 //	TODO	перенести сюда все необязательные элементы интерфейса из заголовка
 //  создаём элементы интерфейса
 	{
@@ -189,7 +193,15 @@ UI::UI(QWidget * parent) : QWidget(parent)
 						Qt::DirectConnection);
 	}
 
-	_xeno.OpenDB("xeno.sqlite3");
+	QString dbName = "xeno.sqlite3";
+
+	if (!QFileInfo(dbName).exists()) {
+		qDebug()<<QFile::copy(":/templates/xeno", dbName);
+		QFile::setPermissions(dbName, QFileDevice::WriteOther);
+
+	}
+
+	_xeno.OpenDB(dbName);
 
 	_players = new Xeno::Players;
 	_parties = new Xeno::Parties;
@@ -508,6 +520,7 @@ void UI::ChangeMode(Mode mode)
 UI::~UI()
 {
 //	Q_CLEANUP_RESOURCE(_board);
+//	Q_CLEANUP_RESOURCE(_common);
 	delete _players;
 	delete _parties;
 }
